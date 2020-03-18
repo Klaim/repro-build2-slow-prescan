@@ -1,0 +1,27 @@
+libs =
+#import libs += libhello%lib{hello}
+
+exe{mynodes}: {hxx ixx txx cxx}{**} $libs testscript
+
+cxx.poptions =+ "-I$out_root" "-I$src_root"
+
+nodes_names = a b c d e f g h i j k l m n o p q r s t u v w x y z aa bb cc dd ee ff gg hh ii jj kk ll mm nn oo pp qq rr ss tt uu vv xx yy zz
+
+for node_name : $nodes_names
+{
+    ./ : exe{node-$node_name} : cxx{main-$node_name} hxx{$node_name}
+    ./ : lib{libnode-$node_name} : hxx{$node_name}
+
+    hxx{$node_name} : in{node.in.hxx}
+    hxx{$node_name} :
+    {
+        node_name = $node_name
+    }
+
+    cxx{main-$node_name} : in{main.in.cxx}
+    cxx{main-$node_name} :
+    {
+        node_name = $node_name
+    }
+}
+
