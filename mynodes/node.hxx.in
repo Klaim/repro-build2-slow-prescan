@@ -1,5 +1,7 @@
 #pragma once
 
+#include <do-not-exist.hxx>
+
 inline void func_$node_name$()
 {
 
