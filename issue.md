@@ -45,8 +45,8 @@ A this point, there is no visible problem, it's as fast as expected and there is
 At the moment the `master` branch fo the same repo have this property:
 ```
 # CONSOLE B
-git clone https://github.com/Klaim/repro-build2-slow-prescan.git longrepro
-cd longrepro
+git clone https://github.com/Klaim/repro-build2-slow-prescan.git longprescan
+cd longprescan
 git switch master
 bdep init -C ../build-msvc cc
 ```
@@ -60,7 +60,7 @@ bdep init -C ../build-msvc cc
 b
 ```
 
-If you don't see the issue, before re-trying you need to `bdep deinit && bdep init` the `longrepro`, or change something in `node.in.hxx` to reproduce the long pre-scan.
+If you don't see the issue, before re-trying you need to `bdep deinit && bdep init` the `longprescan`, or change something in `node.in.hxx` to reproduce the long pre-scan.
 
 Observed
 --------
