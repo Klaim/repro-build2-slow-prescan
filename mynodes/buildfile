@@ -12,13 +12,13 @@ for node_name : $nodes_names
     ./ : exe{node-$node_name} : cxx{main-$node_name} hxx{$node_name}
     ./ : lib{libnode-$node_name} : hxx{$node_name}
 
-    hxx{$node_name} : in{node.in.hxx}
+    hxx{$node_name} : in{node}
     hxx{$node_name} :
     {
         node_name = $node_name
     }
 
-    cxx{main-$node_name} : in{main.in.cxx}
+    cxx{main-$node_name} : in{main}
     cxx{main-$node_name} :
     {
         node_name = $node_name
