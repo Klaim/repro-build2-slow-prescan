@@ -60,7 +60,9 @@ bdep init -C ../build-msvc cc
 b
 ```
 
-If you don't see the issue, before re-trying you need to `bdep deinit && bdep init` the `longprescan`, or change something in `node.in.hxx` to reproduce the long pre-scan.
+If you don't see the issue, before re-trying you need to `bdep deinit && bdep init` the `longprescan`, or change something in `node.in.hxx` to reproduce the long pre-scan. You can also just `b clean update` to go faster, the window to trigger the issue will just be shorter.
+
+For me the issue appears about 1 time per 8 attempts.
 
 Observed
 --------
@@ -70,7 +72,7 @@ In `output.txt` (coming from the repro branch):
 Assertion failed: !good_error, file C:\Users\jlamotte\Documents\build2\build2-toolchain-0.12\build2-0.12.0\libbuild2\cc\compile-rule.cxx, line 3717
 ```
 
-Because it stops the build but the script keep retrying to build, I often see several occurences of this sema assertion failure.
+Because it stops the build but the script keep retrying to build, I often see several occurences of this assertion failure once I manage to get it.
 
 Observations
 ------------
