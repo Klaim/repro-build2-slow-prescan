@@ -23,3 +23,4 @@
 *.exe.dlls/
 *.exe.manifest
 *.pc
+output.txt
