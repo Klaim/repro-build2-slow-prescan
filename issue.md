@@ -82,4 +82,5 @@ Observations
 - The "long pre-scan" build might just be impacting the processing speed. Although so far I managed to trigger the issue only when two builds of separate projects were ongoing.
 - It seems that the issue only appear when the long-prescan project is still in the pre-scan (pre-compilation) phases.
 - As this is very complex setup and random, many of my observations/assumptions might be totally wrong and I didn't look at what that failing assertion is checking.
+- As it was difficult to get to the point I could reproduce sometime the issue, I didn't try to use verbose logs as it might change drastically the performance, which might make things harder to reproduce.
 
