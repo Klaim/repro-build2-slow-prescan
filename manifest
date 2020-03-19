@@ -8,4 +8,4 @@ url: https://example.org/mynodes
 email: jlamotte@softbankrobotics.com
 depends: * build2 >= 0.12.0
 depends: * bpkg >= 0.12.0
-#depends: libhello ^1.0.0
+depends: libzmq

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <zmq.h>
+
 inline void func_$node_name$()
 {
 

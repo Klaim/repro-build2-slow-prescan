@@ -1,5 +1,5 @@
 libs =
-#import libs += libhello%lib{hello}
+import libs += libzmq%lib{zmq}
 
 ./ : exe{mynodes}: {hxx ixx txx cxx}{**} $libs testscript
 
@@ -9,8 +9,8 @@ nodes_names = a b c d e f g h i j k l m n o p q r s t u v w x y z aa bb cc dd ee
 
 for node_name : $nodes_names
 {
-    ./ : exe{node-$node_name} : cxx{main-$node_name} hxx{$node_name}
-    ./ : lib{libnode-$node_name} : hxx{$node_name}
+    ./ : exe{node-$node_name} : cxx{main-$node_name} hxx{$node_name} $libs
+    ./ : lib{libnode-$node_name} : hxx{$node_name} $libs
 
     hxx{$node_name} : in{node}
     hxx{$node_name} :
